@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Boletos</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Perzonalización del tema -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primario: '#2563eb',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="transition-colors duration-500 bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+    <!-- Encabezado -->
+    <header class="flex justify-between items-center p-4 shadow-md bg-white dark:bg-gray-800 transition-colors duration-500">
+        <h1 class="text-xl font-bold text-primario">Reserva de Boletos</h1>
+        <button id="modo" class="px-3 py-1 rounded bg-primario text-white hover:opacity-80 transition">
+            Cambiar tema
+        </button>
+    </header>
+    <!-- Contenido principal -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center">
+        <h2 class="text-3xl font-semibold mb-4">Bienvenido</h2>
+        <p class="text-lg max-w-md">
+            Reserva tus boletos de cine, conciertos o transporte fácilmente desde un solo lugar.
+        </p>
+    </main>
+    <script>
+        const html = document.documentElement;
+        const btn = document.getElementById('modo');
+        btn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
